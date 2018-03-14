@@ -33,7 +33,9 @@ public class StompSender {
 		  String user = System.getenv("STOMP_USERNAME");
 		  String pass = System.getenv("STOMP_PASSWORD");
 		  String queue = System.getenv("STOMP_QUEUE");
+		  System.out.println("Attempting to connect to " + hostname + " as " + user + " with password: " + pass);
 		  Socket socket = new Socket(hostname, 61613);
+		  System.out.println("Created socket...");
 	      String connectFrame = "CONNECT\n" +
 	 	  "accept-version:1.2\n" +
 	          "host:" + hostname + "\n" +
